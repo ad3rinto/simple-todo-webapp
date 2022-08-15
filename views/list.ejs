@@ -8,7 +8,13 @@
 </head>
 <body>
     <h1>Todo App</h1>
-    <h2>It's a <%= kindOfDay %></h2>
+    <% if(kindOfDay === "Monday"){ %>
+        <h2 style="color: purple"> <%= kindOfDay %> List</h2>
+
+        <% } else { %>
+        <h2 style="color: purple"> <%= kindOfDay %> List</h2>
+        <% } %>
+    
     
 </body
 </html>
