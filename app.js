@@ -15,11 +15,7 @@ app.get("/", function(req, res){
     );
     console.log(dayOfTheWeek)
 
-    // if(today.getDay() === 6 || today.getDay() === 0){
-    //     dayOfTheWeek = "Weekend";
-    // } else {
-    //     dayOfTheWeek = "Weekday";        
-    // }
+    
     res.render("list", {kindOfDay: dayOfTheWeek});
 });
 
