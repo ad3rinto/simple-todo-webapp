@@ -7,14 +7,17 @@
     <title>ToDo List</title>
 </head>
 <body>
-    <h1 style="color:rgb(100, 0, 55)">Todo App</h1>
-    <% if(kindOfDay === "Tuesday"){ %>
-        <h2 style="color: red"> <%= kindOfDay %> List</h2>
+   <h1><%= kindOfDay %> </h1>
+    
+   <ul>
+      <li>Buy Food</li>
+      <li>Cook Food</li>
+      <li>Eat Food</li>
 
-        <% } else { %>
-        <h2 style="color: green"> <%= kindOfDay %> List</h2>
-        <% } %>
-    
-    
+   </ul>
+   <form action="/" method="post">
+      <input type="text" name="nextItem" id="todo">
+      <button type="submit">+</button>
+   </form>
 </body
 </html>
