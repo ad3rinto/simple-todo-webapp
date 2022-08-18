@@ -3,15 +3,15 @@ const bodyParser = require("body-parser");
 const { RSA_NO_PADDING, SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } = require("constants");
 const { name } = require("ejs");
 const PORT = 3000;
-var items = ["Buy Food","Cook Food","Eat Food"];
+let items = ["Buy Food","Cook Food","Eat Food"];
 
 const app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
-    var today = new Date();
-    var dayOfTheWeek = today.toLocaleString(
+    let today = new Date();
+    let dayOfTheWeek = today.toLocaleString(
         'default', {weekday: 'long'}
     );
 
@@ -20,7 +20,7 @@ app.get("/", function(req, res){
 
 
 app.post("/", function(req, res){
-    var todoItem = req.body.nextItem;
+    let todoItem = req.body.nextItem;
     items.push(todoItem);
     console.log(items)
 
