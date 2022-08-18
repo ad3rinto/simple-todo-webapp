@@ -10,14 +10,15 @@
    <h1><%= kindOfDay %> </h1>
     
    <ul>
-      <li>Buy Food</li>
-      <li>Cook Food</li>
-      <li>Eat Food</li>
-
+      <% for(var i = 0; i<todoItems.length; i++){ %>
+        <li><%= todoItems[i] %></li>
+         <% } %>
+    
+   
    </ul>
-   <form action="/" method="post">
+   <form class="" action="/" method="post">
       <input type="text" name="nextItem" id="todo">
-      <button type="submit">+</button>
+      <button type="submit">Add</button>
    </form>
-</body
+</body>
 </html>
