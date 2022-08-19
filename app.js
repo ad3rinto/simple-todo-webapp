@@ -4,6 +4,8 @@ const { RSA_NO_PADDING, SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } = require("constant
 const { name } = require("ejs");
 const PORT = 3000;
 let items = ["Buy Food","Cook Food","Eat Food"];
+let workItems = ["Plan the day"];
+
 
 const app = express();
 app.set("view engine", "ejs");
@@ -16,19 +18,37 @@ app.get("/", function(req, res){
         'default', {weekday: 'long'}
     );
 
-    res.render("list", {kindOfDay: dayOfTheWeek,todoItems : items});
+    res.render("list", {listTitle: dayOfTheWeek,todoItems : items});
+});
+
+
+app.get("/work", function(req, res){
+    res.render("list", {listTitle: "Work List", todoItems: workItems});
 });
 
 
 app.post("/", function(req, res){
     let todoItem = req.body.nextItem;
-    items.push(todoItem);
-    console.log(items)
 
-    res.redirect("/")
+    if(req.body.list === "Work"){
+        workItems.push(todoItem); 
+        res.redirect("/work"); 
+    } else {
+        items.push(todoItem);
+        res.redirect("/");
+
+    }
+    console.log(workItems, items)
+    
 })
 
+// app.post("/work", function(req, res){
+//     let todoItemWork = req.body.nextItem;
+//     workItems.push(todoItemWork);
+//     console.log(workItems)
 
+//     res.redirect("/work")
+// })
 
 
 app.listen(PORT, function(){
