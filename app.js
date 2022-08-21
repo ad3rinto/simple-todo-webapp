@@ -42,13 +42,6 @@ app.post("/", function(req, res){
     
 })
 
-// app.post("/work", function(req, res){
-//     let todoItemWork = req.body.nextItem;
-//     workItems.push(todoItemWork);
-//     console.log(workItems)
-
-//     res.redirect("/work")
-// })
 
 
 app.listen(PORT, function(){
