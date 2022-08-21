@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const { RSA_NO_PADDING, SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } = require("constants");
 const { name } = require("ejs");
 const PORT = 3000;
-let items = ["Buy Food","Cook Food","Eat Food"];
+let items = ["Buy Food"];
 let workItems = ["Plan the day"];
 
 
