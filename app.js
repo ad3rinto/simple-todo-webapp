@@ -36,12 +36,9 @@ app.post("/", function(req, res){
     } else {
         items.push(todoItem);
         res.redirect("/");
-
     }
-    console.log(workItems, items)
-    
+    console.log(workItems, items)   
 })
-
 
 
 app.listen(PORT, function(){
